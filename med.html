@@ -1,27 +1,136 @@
 
-
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Med Search</title>
+  <title>Huangdi Neijing Wellness Search</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f6f8fb, #e9eef6);
+      color: #1f2937;
+    }
+
+    header {
+      padding: 2.5rem 1rem;
+      text-align: center;
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    main h2 {
+      margin-top: 0;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    main p {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .search-input {
+      margin-top: 1.8rem;
+      width: 100%;
+      max-width: 440px;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    footer span {
+      font-weight: 500;
+    }
+  </style>
 </head>
+
 <body>
-<H1> Type in your question here. Thank you - CL </H1>
+
+<header>
+  <h1>黄帝内经 · 养生信息检索</h1>
+  <p>Search information aligned with the wisdom of <em>Huangdi Neijing</em></p>
+</header>
+
+<main>
+  <h2>探索符合《黄帝内经》的养生理念</h2>
+
+  <p>
+    本站用于检索和探索<strong>符合《黄帝内经》理论的养生与健康信息</strong>，
+    旨在帮助理解传统中医关于顺应自然、调和阴阳、养生保健的思想。
+  </p>
+
+  <!-- Element that opens the search widget -->
+  <input
+    class="search-input"
+    placeholder="请输入养生相关问题，例如：四季养生原则"
+    id="searchWidgetTrigger"
+  />
+
+  <!-- Search widget (hidden until triggered) -->
+  <gen-search-widget
+    configId="d89f6a3f-9015-4eed-887f-179bab0f73c7"
+    triggerId="searchWidgetTrigger">
+  </gen-search-widget>
+
+  <div class="note">
+    本站内容仅用于信息与学习参考，不构成医疗建议。
+  </div>
+</main>
+
+<footer>
+  © 2026 · Built by <span>Caiyi Lang</span>
+</footer>
+
 <!-- Widget JavaScript bundle -->
 <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
 
-<!-- Search widget element is not visible by default -->
-<gen-search-widget
-  configId="d89f6a3f-9015-4eed-887f-179bab0f73c7"
-  triggerId="searchWidgetTrigger">
-</gen-search-widget>
-
-<!-- Element that opens the widget on click. It does not have to be an input -->
-<input placeholder="Search here" id="searchWidgetTrigger" />
-
 </body>
-
 </html>
